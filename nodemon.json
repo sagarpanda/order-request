@@ -1,0 +1,4 @@
+{
+  "verbose": true,
+  "ignore": ["gui/*", "public/bundle.js"]
+}

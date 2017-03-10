@@ -18,7 +18,7 @@ var schema = new Schema({
 
 // adding static methods to the Model
 schema.statics.findByUser = function(orderBy, cb){
-  return this.find({orderBy:orderBy}, {_id: 0, __v: 0}, cb);
+  return this.find({orderBy:orderBy}, {__v: 0}, cb);
 };
 
 schema.statics.findByOrderId = function(orderId, cb){

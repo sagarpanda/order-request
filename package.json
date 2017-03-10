@@ -20,6 +20,7 @@
   "homepage": "https://github.com/sagarpanda/order-request#readme",
   "dependencies": {
     "body-parser": "^1.17.0",
+    "connect-mongo": "^1.3.2",
     "express": "^4.14.1",
     "express-session": "^1.15.1",
     "mongoose": "^4.8.5",

@@ -1,5 +1,6 @@
 html
 	include head.pug
+	script userInfo='#{JSON.stringify(info)}';
 	body
 		nav(class="navbar navbar-default")
 			div(class="container")
@@ -7,6 +8,8 @@ html
 					a(class="navbar-brand") ORDER REQUEST
 				div(class="navbar-collapse collapse")
 					ul(class="nav navbar-nav navbar-right")
+						li 
+							a Hi #{info.username} (L#{info.role})
 						li 
 							a(href="/logout") Logout
 		div(id="main" class="container") 

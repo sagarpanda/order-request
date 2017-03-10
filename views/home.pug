@@ -1,0 +1,13 @@
+html
+	include head.pug
+	body
+		nav(class="navbar navbar-default")
+			div(class="container")
+				div(class="navbar-header")
+					a(class="navbar-brand") ORDER REQUEST
+				div(class="navbar-collapse collapse")
+					ul(class="nav navbar-nav navbar-right")
+						li 
+							a(href="/logout") Logout
+		div(id="main" class="container") 
+		script(src=mainSrc)

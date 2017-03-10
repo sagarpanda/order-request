@@ -19,12 +19,14 @@
   },
   "homepage": "https://github.com/sagarpanda/order-request#readme",
   "dependencies": {
-    "body-parser": "^1.16.1",
+    "body-parser": "^1.17.0",
     "express": "^4.14.1",
+    "express-session": "^1.15.1",
     "mongoose": "^4.8.5",
     "pug": "^2.0.0-beta11",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",

@@ -4,10 +4,14 @@ var DIST_DIR = path.resolve(__dirname, "public");
 var SRC_DIR = path.resolve(__dirname, "reactjs");
 
 var config = {
-    entry: SRC_DIR + "/index.js",
+    entry: {
+        l1: SRC_DIR + "/L1Index.js",
+        l2: SRC_DIR + "/L2Index.js",
+        l3: SRC_DIR + "/L3Index.js"
+    },
     output: {
         path: DIST_DIR + "/js",
-        filename: "bundle.js",
+        filename: "[name].bundle.js",
         publicPath: "/js/"
     },
     module: {

@@ -1,4 +1,4 @@
 {
   "verbose": true,
-  "ignore": ["gui/*", "public/bundle.js"]
+  "ignore": ["reactjs/*", "public/*"]
 }

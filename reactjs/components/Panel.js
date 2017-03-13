@@ -11,7 +11,7 @@ class Panel extends React.Component {
 
 	buttonClick(e) {
 		console.log(e.target.getAttribute('data-index'), e.target.textContent);
-		PubSub.publish('VIEW_CHANGE', 1);
+		PubSub.publish('VIEW_CHANGE', {slno: 1});
 	}
 
 	render() {

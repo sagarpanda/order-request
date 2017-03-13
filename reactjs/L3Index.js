@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import FormView from './components/FormView';
+import OrderDetail from './views/OrderDetail';
 import OrderHistory from './views/OrderHistory';
 import PubSub from 'pubsub-js';
 
@@ -10,10 +11,12 @@ class L3Page extends React.Component {
 		super(props);
 		this.components = [
 			<OrderHistory />,
-			<FormView />
+			<FormView />,
+			<OrderDetail orderId="58c5eae0f43bf76e4f70f924" />
 		];
 		this.state = {
-			slno: 0
+			slno: 0,
+			orderId: ''
 		};
 		this.tokeSub = null;
 		this.subscribeHandler = this.subscribeHandler.bind(this);
@@ -27,9 +30,9 @@ class L3Page extends React.Component {
 		PubSub.unsubscribe(this.tokeSub);
 	}
 
-	subscribeHandler(action, slno) {
-		console.log(slno);
-		this.updateView(slno);
+	subscribeHandler(action, option) {
+		var orderId = option.orderId || '';
+		this.setState({slno: option.slno, orderId:orderId});
 	}
 
 	updateView(slno) {
@@ -39,7 +42,12 @@ class L3Page extends React.Component {
 	render() {
 		var view = this.components[this.state.slno];
 	    return (
-	    	<div>{ view }</div>
+	    	<div>
+	    	{
+	    		(this.state.slno === 0)? (<OrderHistory />) : (this.state.slno === 1) 
+	    		? (<FormView />) : (<OrderDetail orderId={this.state.orderId} />)
+	    	}
+	    	</div>
 	    );
 	}
 }

@@ -12,13 +12,29 @@ apiv1.get('/', function(req, res) {
 });
 
 apiv1.get('/products', function(req, res) {
-	res.send('Hello from APIv1 root route1.');
+	Product.find({}, {_id: 0, __v: 0}, function(err, records) {
+		res.send({data: records, status: true, errCode: "", errMsg: ""});
+	})
 });
 
 apiv1.get('/orders/:userid', function(req, res) {
 	PlaceOrder.findByUser(req.params.userid, function(err, records) {
 		res.send({data: records, status: true, errCode: "", errMsg: ""});
 	})
+	//res.send('Hello from APIv1 root route1.');
+});
+
+apiv1.post('/placeOrder', function(req, res) {
+	var records = req.body;
+	req.body.orderDate = new Date();
+	console.log(req.body);
+	var placeOrder = new PlaceOrder(req.body);
+	placeOrder.save(function(){
+		res.send({data: req.body, status: true, errCode: "", errMsg: ""});
+	});
+	/*PlaceOrder.findByUser(req.params.userid, function(err, records) {
+		res.send({data: records, status: true, errCode: "", errMsg: ""});
+	})*/
 	//res.send('Hello from APIv1 root route1.');
 });
 

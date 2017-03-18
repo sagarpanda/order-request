@@ -1,0 +1,1 @@
+{"options":{},"indexes":[{"v":1,"key":{"_id":1},"name":"_id_","ns":"order-request.sessions"},{"v":1,"key":{"expires":1},"name":"expires_1","ns":"order-request.sessions","expireAfterSeconds":0}]}

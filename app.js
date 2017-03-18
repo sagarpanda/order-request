@@ -10,6 +10,7 @@ var Constant 	= require('./helpers/Constant');
 var User 		= require('./models/UserModel');
 var Product 	= require('./models/ProductModel');
 
+mongoose.Promise = global.Promise;
 var conn = mongoose.connect('mongodb://localhost/'+Constant.DB_NAME);
 
 // config
@@ -76,7 +77,9 @@ app.post('/login', function(req, res){
 
 app.get('/home/:role', function(req, res){
 	if(!req.session.info){
-  		//res.redirect('/login');
+  		res.redirect('/login');
+  	}else if(req.session.info.role != req.params.role){
+		res.redirect('/home/'+req.session.info.role);
   	}
   	//console.log(req.params);
 	res.render('home', { title: 'Order Request', mainSrc: "/js/l"+req.params.role+".bundle.js", info: req.session.info });

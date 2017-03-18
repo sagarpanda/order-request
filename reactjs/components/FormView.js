@@ -55,6 +55,7 @@ class FormView extends React.Component {
 			items 		:this.state.items, 
 			storeName	: "User3 Store", 
 			status 		: "Awaiting Approval",
+			l2Approve 	: false,
 			orderBy 	: userInfo.username
 		})
 		.then(function(response){
@@ -135,6 +136,13 @@ class FormView extends React.Component {
 							</thead>
 							<tbody>
 								{items}
+							</tbody>
+						</table>
+					</div>
+					<div className="col-xs-12 col-sm-12">
+
+						<table className="table table-condensed">
+							<tbody>
 								<tr>
 									<td>Total</td>
 									<td></td>

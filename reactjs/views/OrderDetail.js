@@ -67,6 +67,13 @@ class FormView extends React.Component {
 							</thead>
 							<tbody>
 								{items}
+							</tbody>
+						</table>
+					</div>
+					<div className="col-xs-12 col-sm-12">
+
+						<table className="table table-condensed">
+							<tbody>
 								<tr>
 									<td>Total</td>
 									<td></td>

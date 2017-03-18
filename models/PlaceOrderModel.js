@@ -11,6 +11,7 @@ var schema = new Schema({
   orderDate: 	Date,
   status: 		String,
   orderBy: 		String,
+  l2Approve: 	Boolean,
   items: 		[],
   created_at: 	Date,
   updated_at: 	Date
